@@ -30,6 +30,7 @@ store.subscribe(() => console.log(store.getState()));
 //dispatching actions to change the state
 // *add*   *subtract*  *reset*
 store.dispatch({type: 'INCREMENT'});
+store.dispatch({type: 'INCREMENT'});
 store.dispatch({type: 'DECREMENT'});
 
 //console log   console.log(store.getState);
