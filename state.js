@@ -46,23 +46,28 @@ function reduce(state = { count: 0}, action) {
   }
 
 // Function to log the current state whenever it changes
-function render() {
+function render(){
     const count = store.getState().count;
     console.log('Count:', count); // Log current count state
-  }
+}
 
-  
+//function to check for and reset count
+function resetter(){
+    if (store.getState().count === 1) {
+        store.dispatch(RESET);  // Dispatch RESET action
+    }
+}
+
 // Subscribe to state updates
 store.subscribe(render);
   
 // Initial render
 render();
 
+
 store.getState();
 store.dispatch(INCREMENT);
 store.dispatch(INCREMENT);
 //store.dispatch(DECREMENT);
 store.dispatch(DECREMENT);
-if (store.getState().count === 1) {
-    store.dispatch(RESET);  // Dispatch RESET action
-}
+resetter();
